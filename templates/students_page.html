@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="menu">
+        {% if students %}
+        <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>Project</th>
+                <th>score</th>
+                <th>react</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students|sort(attribute="score", reverse=True) %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student["telegram_bot"]  }}</td>
+                <td>{{ student.score }}/{{max_score}} </td>
+                <td>{% if student.score > 75 %} GOOD {% else %} Not GOOD {% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+        {% else %}
+            <p> Нікого немає  </p>
+        {% endif %}
+    </div>
+{% endblock %}

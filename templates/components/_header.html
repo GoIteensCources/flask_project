@@ -1,0 +1,14 @@
+<div>
+    <h1> Flask Cource нашої группи {{ group }}</h1>
+    <nav>
+        <p>Menu: </p>
+        {% for menu_item in ['home', 'students'] %}
+            <a href={{url_for(menu_item)}}> {{menu_item|upper}} </a>
+        {% endfor %}
+    </nav>
+
+     <div>
+        {{ macros.light_or_dark_mode("body") }}
+    </div>
+    <hr>
+</div>

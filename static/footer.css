@@ -1,0 +1,30 @@
+footer {
+    background-color: blue; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+}
+
+footer .footer-content {
+    max-width: 1200px; /* Максимальная ширина содержимого */
+    margin: 0 auto; /* Центрирование содержимого */
+    display: flex; /* Flexbox для выравнивания */
+    flex-wrap: wrap; /* Перенос строк при необходимости */
+    justify-content: space-between; /* Распределение пространства между элементами */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+footer a {
+    color: #ffcc00; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+footer .footer-bottom {
+    margin-top: 20px; /* Отступ сверху */
+    font-size: 24px; /* Размер шрифта */
+    color: #f5f5d6; /* Цвет текста */
+}

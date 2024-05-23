@@ -1,0 +1,89 @@
+/* h1 {
+    color: #ff0000;
+    background-color: rgb(247, 154, 154);
+    font-size: 24px;
+    text-align: center;
+}
+*/
+
+body{
+   background: Linen;
+   /* background-image: url("/static/images/background_forest.jpeg"); */
+   margin-top: 50px;
+   margin-left: 100px;
+}
+
+h1{
+font-family:Verdana, Geneva, sans-serif;
+font-size: 2.5em;
+color: FireBrick;
+}
+
+p{
+font-family: Georgia, Serif;
+font-size: 1.2em;
+color: DarkSlateGray;
+}
+
+.my_style {
+    color: rgb(0, 255, 0);
+    background-color: rgb(255, 255, 255);
+    font-size: 36px;
+    text-align: center;
+}
+
+#error p {
+    color: red;
+    font-size: 24px;
+    text-align: center;
+}
+
+#error a {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container img {
+    margin-right: 30px; /* Отступ между картинкой и текстовым блоком */
+}
+
+div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+#menu {
+    margin: 30px auto;
+    width: 30%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+
+#menu th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
+#menu td {
+    padding: 10px;
+    border: 3px solid #ddd;
+}
+
+
+#menu tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

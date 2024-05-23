@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% import "macros.html" as macros %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/footer.css">
+</head>
+
+
+<header>
+    {% include "components/_header.html" %}
+</header>
+
+
+<body>
+    {% block content %}
+        <div class="container">
+            <img src="/static/image_logo.jpg"  alt="Logo">
+            <div>
+                <h3> Девіз:  </h3>
+                <p>Кодимо з думкою ясною,<br>
+                Мрії стануть реальністю нашою.<br>
+                Не зупинимось ніколи,<br>
+                До вершин ідемо сміливо!
+                </p>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+
+<footer>
+    {% include "components/_footer.html" %}
+</footer>
+
+</html>
