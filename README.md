@@ -1,3 +1,3 @@
 ## Flask project Goiteens PYTHON_1y_36_25_01_24 (1 підгр)
 
-123
+this learning project
