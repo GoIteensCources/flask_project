@@ -3,7 +3,7 @@
     <nav>
         <p>Menu: </p>
         {% for menu_item in ['home', 'students'] %}
-            <a href={{url_for(menu_item)}}> {{menu_item|upper}} </a>
+            <a href={{url_for(menu_item)}} style="padding-left: 30px"> {{menu_item|upper}} </a>
         {% endfor %}
     </nav>
 

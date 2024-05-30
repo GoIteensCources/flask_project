@@ -13,16 +13,12 @@ def make_read_query(query):
             cursor.execute(query)
             result = cursor.fetchall()
 
-        data_studs = []
-        if result:
-            for row in result:
-                data_studs.append(
-                    {"name": row[1],
-                     "email": row[2],
-                     "project": row[3],
-                     "score": row[4] if row[4] else 0,
-                     }
-                )
+        data_studs = [{"id": row[0],
+                       "name": row[1],
+                       "email": row[2],
+                       "project": row[3],
+                       "score": row[4] if row[4] else 0,
+                       } for row in result if result]
 
         return data_studs
 
@@ -77,7 +73,14 @@ def get_by_id(id):
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
         cursor.execute(query, (id,))
-        return cursor.fetchone()
+        result = cursor.fetchone()
+        return {"id": result[0],
+                "name": result[1],
+                "email": result[2],
+                "project": result[3],
+                "score": result[4] if result[4] else 0,
+                "data": result[5],
+                }
 
 
 def update_data_table(name, email, project=None, score=None):
@@ -90,11 +93,11 @@ def update_data_table(name, email, project=None, score=None):
     make_write_query(update_query, data_tuple)
 
 
-def delete_data_table(email):
+def delete_data_table(id):
     query = ("""
-        DELETE FROM students WHERE email = ?;
+        DELETE FROM students WHERE id = ?;
         """)
-    make_write_query(query, (email,))
+    make_write_query(query, (id,))
 
 
 if __name__ == "__main__":

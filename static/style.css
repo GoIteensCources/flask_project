@@ -83,7 +83,33 @@ div {
     border: 3px solid #ddd;
 }
 
-
-#menu tr:nth-child(even) {
-    background-color: #f9f9f9;
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn:active {
+    background-color: #00408d;
+    transform: scale(1.02);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007bff;
+}
+

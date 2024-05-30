@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div>
+
+    <h2>{{student.name}}</h2>
+    <p>{{student.email}}</p>
+    <a class="btn" type="button" href="{{url_for('delete_student', id_=student.id)}}">
+        Видалити учня!
+    </a>
+
+</div>
+{% endblock %}

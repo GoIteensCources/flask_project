@@ -6,6 +6,7 @@
         <table>
         <thead>
             <tr>
+                <th>id</th>
                 <th>name</th>
                 <th>Project</th>
                 <th>score</th>
@@ -15,8 +16,11 @@
         <tbody>
             {% for student in students|sort(attribute="score", reverse=True) %}
             <tr>
-                <td>{{ student.name }}</td>
-                <td>{{ student["telegram_bot"]  }}</td>
+                <td>{{ student.id }}</td>
+                <td>
+                    <a href="{{url_for('details_student', id_=student.id)}}" >{{ student.name }}</a>
+                </td>
+                <td>{{ student["project"]  }}</td>
                 <td>{{ student.score }}/{{max_score}} </td>
                 <td>{% if student.score > 75 %} GOOD {% else %} Not GOOD {% endif %}</td>
             </tr>
@@ -27,5 +31,14 @@
         {% else %}
             <p> Нікого немає  </p>
         {% endif %}
+
     </div>
+
+    <div>
+        <button class="btn" type="button" onclick="window.location.href='{{url_for('add_student')}}';">
+            Додати учня!
+        </button>
+
+    </div>
+
 {% endblock %}
