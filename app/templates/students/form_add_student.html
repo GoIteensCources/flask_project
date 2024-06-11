@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form method="POST" class="custom-form">
+    <label for="name"> Enter Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+
+    <label for="email">Enter Email:</label>
+    <input type="email" name='email' id="email" placeholder="Enter your email" required><br/>
+
+    <label for="birth_day">Enter birthday:</label>
+    <input type="date" name="birth_day" id="birth_day"><br/>
+
+    <input type = "submit" value = "submit"/><br/>
+</form>
+<br>
+
+{% endblock %}

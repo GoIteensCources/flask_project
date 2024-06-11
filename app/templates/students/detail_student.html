@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{student.name}}</h2>
+    <p>{{student.ade}}</p>
+
+<!--    <a class="btn" type="button" href="{# {url_for('delete_student', id_=student.id)} #}">-->
+<!--        Видалити учня!-->
+<!--    </a>-->
+
+    <div>
+        {% if projects %}
+            {% for p in projects %}
+                <p>{{p.title}} -- {{p.score}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+
+
+{% endblock %}
