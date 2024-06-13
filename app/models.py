@@ -53,7 +53,10 @@ class Project(Base):
     title: Mapped[str] = mapped_column(sa.String(250), default="NOT PROJECT")
     score: Mapped[int] = mapped_column(default=0)
 
-    projects: Mapped[List["Student"]] = relationship(secondary=student_project_assoc_table)
+    students: Mapped[List["Student"]] = relationship(secondary=student_project_assoc_table)
 
     def __str__(self):
         return f"<Project title:{self.title}>"
+
+    def __repr__(self):
+        return f"<Project:{self.title}>"

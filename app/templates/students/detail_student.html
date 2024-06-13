@@ -2,20 +2,28 @@
 
 {% block content %}
     <h2>{{student.name}}</h2>
-    <p>{{student.ade}}</p>
+    <p>Вік: {{student.age}}</p>
 
-<!--    <a class="btn" type="button" href="{# {url_for('delete_student', id_=student.id)} #}">-->
-<!--        Видалити учня!-->
-<!--    </a>-->
 
     <div>
+        <p>Проекти студента: </p>
+
         {% if projects %}
             {% for p in projects %}
-                <p>{{p.title}} -- {{p.score}}</p>
+                <p>{{p.title}}: {{p.score}}</p>
             {% endfor %}
+        {% else %}
+            <p> Проектів не знайдено </p>
         {% endif %}
     </div>
 
+<p>
+    <a class="btn" type="button" href="{{url_for('delete_student', id_=student.id)}}">
+        Видалити учня!
+    </a>
 
-
+    <a class="btn" type="button" href="{{url_for('update_student', id_=student.id)}}">
+       Change data учня!
+    </a>
+</p>
 {% endblock %}

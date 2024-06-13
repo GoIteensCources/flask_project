@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>ALL Projects</h1>
+
+
+    <div id="menu">
+        {% if projects %}
+           <table>
+               <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>score</th>
+                    <th>students</th>
+                </tr>
+                </thead>
+               <tbody>
+               {% for p in projects %}
+                <tr>
+                    <td>{{p[0].id}}</td>
+                    <td>{{p[0].title}}</td>
+                    <td>{{p[0].score}}</td>
+                    <td>
+                        {% for studs in p[1] %}
+                            <p>{{studs.name}}</p>
+                        {% endfor %}
+                    </td>
+                </tr>
+               {% endfor %}
+               </tbody>
+           </table>
+        {% else %}
+           <p> Немає інформації про проекти </p>
+        {% endif %}
+    </div>
+
+    <div>
+        <a href="{{url_for('add_project')}}" class="btn"> ADD Project </a> <br>
+    </div>
+
+{% endblock %}

@@ -56,7 +56,7 @@ def insert_data(name, email, project=None, score=None):
     joining_date = datetime.datetime.now()
     query = """
     INSERT INTO students (name, email, project, score, joining_date)
-               VALUES (?, ?, ?, ?, ?)               
+               VALUES (?, ?, ?, ?, ?)
     """
 
     args = (name, email, project, score, joining_date)

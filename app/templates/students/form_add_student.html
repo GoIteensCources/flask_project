@@ -1,20 +1,37 @@
+
 {% extends "base.html" %}
 
 {% block content %}
 
+{% if student %}
+    <form method="POST" class="custom-form">
+        <label for="up_name"> Enter Name:</label>
+        <input type="text" name="name" id="up_name" placeholder="Enter your name" value="{{student.name}}"><br>
 
-<form method="POST" class="custom-form">
-    <label for="name"> Enter Name:</label>
-    <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+        <label for="up_email">Enter Email:</label>
+        <input type="email" name='email' id="up_email" placeholder="Enter your email" value="{{student.email}}"><br>
 
-    <label for="email">Enter Email:</label>
-    <input type="email" name='email' id="email" placeholder="Enter your email" required><br/>
+        <label for="age">Enter birthday:</label>
+        <input type="text" name="age" id="age" value="{{student.age}}"><br/>
 
-    <label for="birth_day">Enter birthday:</label>
-    <input type="date" name="birth_day" id="birth_day"><br/>
+        <input type = "submit" value = "submit"/><br/>
+    </form>
 
-    <input type = "submit" value = "submit"/><br/>
-</form>
+{% else %}
+
+    <form method="POST" class="custom-form">
+        <label for="name"> Enter Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+
+        <label for="email">Enter Email:</label>
+        <input type="email" name='email' id="email" placeholder="Enter your email" required><br/>
+
+        <label for="birth_day">Enter birthday:</label>
+        <input type="date" name="birth_day" id="birth_day"><br/>
+
+        <input type = "submit" value = "submit"/><br/>
+    </form>
+
+{% endif %}
 <br>
-
 {% endblock %}

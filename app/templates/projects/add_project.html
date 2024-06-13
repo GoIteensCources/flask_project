@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>New project</h2>
+
+
+<form method="POST" class="custom-form">
+    <label for="title"> Enter title:</label>
+    <input type="text" name="title" id="title" placeholder="Enter title project"><br>
+
+    <label for="score">Enter Score:</label>
+    <input type="text" name='score' id="score" placeholder="Enter score"><br/>
+
+    <p>
+      <label for="students">Students</label>
+      <select name="students" id="students" multiple>
+        {% for item in students %}
+          <option value="{{ item.id }}" >{{ item }}</option>
+        {% endfor %}
+      </select>
+    </p>
+
+    <input type = "submit" value = "submit"/><br/>
+</form>
+
+<br>
+
+
+{% endblock %}

@@ -2,7 +2,7 @@
     <h1> Flask Cource нашої группи {{ group }}</h1>
     <nav>
         <p>Menu: </p>
-        {% for menu_item in ['home', 'students'] %}
+        {% for menu_item in ['home', 'students', 'projects'] %}
             <a href={{url_for(menu_item)}} style="padding-left: 30px"> {{menu_item|upper}} </a>
         {% endfor %}
     </nav>
